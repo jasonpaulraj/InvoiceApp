@@ -236,7 +236,8 @@ class InvoiceController extends Controller
      */
     public function show(Invoice $invoice)
     {
-        $companies = Company::orderBy('created_at', 'DESC')->get();
+        // $companies = Company::orderBy('created_at', 'DESC')->get();
+        $companies = false;
 
         return view('invoice.start_invoice', compact('companies'));
     }

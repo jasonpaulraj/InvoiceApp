@@ -27,7 +27,8 @@ class Companies extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $companies = Company::orderBy('created_at', 'DESC')->get();
+        $companies = false;
+        // $companies = Company::orderBy('created_at', 'DESC')->get();
 
         return view('company.view_list_of_companies', compact('companies'));
     }

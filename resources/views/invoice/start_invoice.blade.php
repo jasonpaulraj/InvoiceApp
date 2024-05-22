@@ -7,7 +7,18 @@
             Invoice
         </p>
     </div>
-
+    @php($companies =
+                [
+                'Shimmer Shake',
+                'Odd Coupling',
+                'RiseShineSustain',
+                'YesAchievers',
+                'Timeframe Genius',
+                'Goalcraft',
+                'ProfitPioneer',
+                'VacayVentures'
+                ]
+                )
     <div class="col-12" style="margin:auto;text-align: center;">
         <div class="col-12" style="display: inline-flex;">
             <input type="hidden" name="companyId" value="companyId" id="companyId"/>
@@ -16,15 +27,17 @@
             </div>
             <div class="col-6" style="">
                 <select id="company" name="company" class="form-control" >
+                    @if($companies)
                     @foreach($companies as $company)
-                    <option value="{{$company->id}}">{{$company->name}}</option>
+                    <option value="{{$company}}">{{$company}}</option>
                     @endforeach
+                    @endif
                 </select>
             </div>
         </div>
         <hr>
         <div class="col-12" style="margin:auto;text-align: center;">
-            <a href="{{route('invoice-add',["companyId" => $company->id])}}" class="btn btn-success btn-flat">Create New Invoice</a>
+            <a href="{{route('invoice-add',["companyId" => 1])}}" class="btn btn-success btn-flat">Create New Invoice</a>
         </div>
     </div>
 
